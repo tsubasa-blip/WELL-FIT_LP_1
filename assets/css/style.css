@@ -42,7 +42,7 @@ li{
 .btn-area h1 {
     font-size: 24px;
     letter-spacing: 4px;
-    font-family: Inria Sans;
+    font-family: 'Inria Sans', sans-serif;
     margin-bottom: 20px;
 }
 .convertion-link1{
@@ -79,36 +79,37 @@ li{
 /* well-fitとは */
 .about{
     height: 288px;
-    font-size: 20px;
-
 }
 .about h2{
-    font-size: 16px;
+    font-size: 20px;
     margin: 30px 0px 15px;
 }
 
 .about h3{
     font-size: 16px;
     margin: 40px;
+    letter-spacing: 1.5px; /* 文字間隔を 2px 広げる */
 }
 
 .about p{
     font-size: 10px;
     line-height: 2;
+    letter-spacing: 1.2px; /* 文字間隔を 2px 広げる */
+
 }
 
 /* 悩みについて */
 .fear{
     background-color: #BBBBBB;
-    height: 520px;
+    height: 530px;
     position: relative;
     z-index: -2;
 }
 
 .fear-stomach{
     position: absolute;
-    transform: translateX(-50%);
-    filter: grayscale(90%) blur(1.5px) opacity(50%);
+    transform: translateX(-45%);
+    filter: grayscale(10%) blur(0.0px) opacity(50%);
     z-index: -1;
     max-width: 380px;
 }
@@ -117,6 +118,7 @@ li{
     padding: 10px;
     color: #fff;
     opacity: 1;
+    text-shadow: 1px 2px 3px #808080;
 }
 
 .fear-section{
@@ -142,7 +144,7 @@ ul{
     border-bottom: dashed 1px #333
 }
 .fear-all p{
-    margin: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 15px;
     font-size: 13px;
     text-align: left;
 }
@@ -158,10 +160,6 @@ ul{
     position: relative;
 }
 
-.section ol{
-    /* display: inline-block; */
-}
-
 .section .allow{
     position: absolute;
     z-index: 1;
@@ -169,7 +167,7 @@ ul{
 }
 
 .section h1{
-    font-size: 18px;
+    font-size: 20px;
     margin: 0 auto;
     padding: 40px 0px;
     background: linear-gradient(90deg, #cbd877 0%, #bdc48c 45%, #A5B33D 70%, #c6d363 85%, #C2D057 90% 100%);
@@ -206,7 +204,7 @@ dt, dd ,ol {
 }
 
 .section-description{
-    line-height: 1.5;
+    line-height: 2.0;
     font-size: 11px;
     margin: 12px 0px;
     text-align: left;
@@ -236,19 +234,19 @@ dt, dd ,ol {
 
 }
 
-.imgage-right{
+.image-right{
     /* transform: translateX(28%) translateY(-110%); */
     margin-left: 10px; /* 画像を左側に寄せる */
-
 }
 
 .image-small-right{
     border-radius: 5%;
-    text-align: left;
+    /* text-align: left; */
     object-fit: cover;
     /* object-position: 30% 50%; */
     display: inline-block;
-
+    border: 1px solid #333;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .flex-container {
@@ -257,7 +255,7 @@ dt, dd ,ol {
     gap: 5px; /* 要素間の余白 */
     margin-top: -40px;
     justify-content: flex-end; /* 右寄せ */
-    margin-right: 8px;
+    margin-right: 18px;
   }
 
   .section ol{
