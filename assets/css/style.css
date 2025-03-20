@@ -13,6 +13,7 @@ body {
     min-width: 400px;
 }
 
+
 li{
     list-style: none;
 }
@@ -106,12 +107,25 @@ li{
     z-index: -2;
 }
 
-.fear-stomach{
+/* .fear-stomach{
     position: absolute;
     transform: translateX(-45%);
     filter: grayscale(10%) blur(0.0px) opacity(50%);
     z-index: -1;
     max-width: 380px;
+} */
+
+.fear-image {
+    background-image: url('../images/fat.png');
+    background-size: contain; /* 🔹90%のサイズを維持しつつ余白を作らない */
+    background-position: center; /* 右寄せ＆中央配置 */
+    background-repeat: no-repeat;
+    height: 280px;
+    align-items: center;
+    font-weight: bold;
+    background-color: #BBBBBB; /* 背景を灰色 */
+    filter: grayscale(10%) blur(0.0px) opacity(70%);
+    z-index: -1;
 }
 
 .fear-image h2{
@@ -126,7 +140,7 @@ li{
     /* left: 60%; */
     /* top: 55%; */
     /* margin-top: 210px; */
-    transform: translateY(100%); 
+    transform: translateY(10%); 
 }
 
 .fear-all{
@@ -179,6 +193,10 @@ ul{
 dt, dd ,ol {
 	margin: 0;
 	padding: 0;
+}
+
+.point-item{
+    padding-bottom: 40px;
 }
 
 .section-nunmer{
@@ -262,3 +280,25 @@ dt, dd ,ol {
     max-width: 420px;
     margin: 0 auto;
   }
+
+.image-big-center{
+    border: 1px solid #333;
+    width: 90%;
+    height: 250px;
+    border-radius: 5%;
+    /* text-align: left; */
+    object-fit: cover;
+    background-color: #fff; /* 画像の背景を白に設定 */
+    object-position: 60% 60%;  /* 表示部分の位置を調整 */
+
+}
+
+.image-center{
+    background-color: #F2FBF7;
+
+}
+
+
+
+
+      
