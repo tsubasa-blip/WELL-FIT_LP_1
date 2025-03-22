@@ -196,7 +196,7 @@ dt, dd ,ol {
 }
 
 .point-item{
-    padding-bottom: 40px;
+    padding-bottom: 48px;
 }
 
 .section-nunmer{
@@ -265,13 +265,15 @@ dt, dd ,ol {
     display: inline-block;
     border: 1px solid #333;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 180px;
+    height:130px;
 }
 
 .flex-container {
     display: flex;
     align-items: flex-end; 
-    gap: 5px; /* 要素間の余白 */
-    margin-top: -40px;
+    /* gap: 5px; 要素間の余白 */
+    margin-top: -60px;
     justify-content: flex-end; /* 右寄せ */
     margin-right: 18px;
   }
@@ -289,8 +291,8 @@ dt, dd ,ol {
     /* text-align: left; */
     object-fit: cover;
     background-color: #fff; /* 画像の背景を白に設定 */
-    object-position: 60% 60%;  /* 表示部分の位置を調整 */
-
+    object-position: 50% 60%;  /* 表示部分の位置を調整 */
+    padding-left: 15px;
 }
 
 .image-center{
