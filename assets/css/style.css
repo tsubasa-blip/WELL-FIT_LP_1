@@ -283,7 +283,7 @@ dt, dd ,ol {
     margin: 0 auto;
   }
 
-.image-big-center{
+.image-big-center-1{
     border: 1px solid #333;
     width: 90%;
     height: 250px;
@@ -295,6 +295,16 @@ dt, dd ,ol {
     padding-left: 15px;
 }
 
+.image-big-center{
+    width: 90%;
+    height: 250px;
+    border-radius: 5%;
+    /* text-align: left; */
+    object-fit: cover;
+    background-color: #fff; /* 画像の背景を白に設定 */
+    object-position: 50% 60%;  /* 表示部分の位置を調整 */
+}
+
 .image-center{
     background-color: #F2FBF7;
 
@@ -302,5 +312,139 @@ dt, dd ,ol {
 
 
 
+/* 左右対称コンテンツのためのCSS */
 
-      
+/* 反転レイアウト用のメインコンテナ */
+.mirror-image-main {
+    text-align: right;
+    margin-right: 8px;
+}
+
+/* 大きな画像（右寄せ） */
+.mirror-image-big {
+    border-radius: 5%;
+    object-fit: cover;
+    width: 305px;
+    height: 225px;
+}
+
+/* フレックスコンテナ（左寄せ） */
+.mirror-flex-container {
+    display: flex;
+    align-items: flex-end;
+    margin-top: -60px;
+    justify-content: flex-start;
+    margin-left: 18px;
+}
+
+/* 小さな画像のコンテナ */
+.mirror-small-image {
+    margin-right: 10px;
+}
+
+/* 小さな画像 */
+.mirror-image-small {
+    border-radius: 5%;
+    object-fit: cover;
+    display: inline-block;
+    border: 1px solid #333;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 180px;
+    height: 130px;
+}
+
+/* 説明文（右側） */
+.mirror-description {
+    font-size: 9px;
+    margin: 10px 10px 10px 0;
+    text-align: left;
+    line-height: 1.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* AI無料体験の流れ セクションのスタイル */
+.free-trial-flow {
+    padding: 0 15px;
+    background-color: #e8f5e9;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.free-trial-flow .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.step-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    /* アイコンは画像で挿入するのでここではプレースホルダーのみ */
+}
+
+.step-number {
+    color: #ff9800;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.step-title {
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.step-content {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.arrow {
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+}
