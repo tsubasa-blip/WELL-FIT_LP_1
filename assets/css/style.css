@@ -364,87 +364,281 @@ dt, dd ,ol {
 
 
 
+/* 店舗情報 */
+.page-container {
+    margin: 40px auto 60px;
+  }
+  
+  /* StoreLocationAccordion 専用スタイル */
+  .sla-container {
+    width: 90%;
+    margin: 0 auto 30px;
+  }
+  
+  .sla-title {
+    text-align: center;
+    margin: 40px 0px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .sla-accordion-container {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0; /* 境界線を追加 */
+
+  }
+  
+  .sla-accordion-header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .sla-accordion-header.active .sla-toggle-btn {
+    transform: rotate(180deg);
+  }
+  
+  .sla-toggle-btn {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .sla-minus {
+    color: #999;
+  }
+  
+  .sla-plus {
+    color: green;
+  }
+  
+  .sla-accordion-content {
+    background-color: #eee;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  
+  .sla-store-item {
+    padding: 12px 20px 12px 40px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .sla-store-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* アニメーション用クラス */
+  .sla-slide-down {
+    animation: slaSlideDown 0.5s ease forwards;
+  }
+  
+  .sla-slide-up {
+    animation: slaSlideUp 0.5s ease forwards;
+  }
+  
+  @keyframes slaSlideDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slaSlideUp {
+    from {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
 
 
 
 
+/* QA */
 
+    /* faq = FAQ Accordion Component のプレフィックス */
+    .faq{
+        
+        background-color: #f8f8f8;
+    }
+    .faq-container {
+        max-width: 90%;
+        padding: 20px 0px 50px;
+        margin:0 auto;
+      }
+      
+      .faq-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      .faq-item {
+        margin-bottom: 15px;
+        border: 1px solid black;
+        border-radius: 4px;
+        overflow: hidden;
+        background-color: white;
+      }
+      
+      .faq-question {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        font-size: 14px;
+      }
+      
+      .faq-question::before {
+        content: "Q";
+        margin-right: 8px;
+        font-weight: bold;
+      }
+      
+      .faq-toggle {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #777;
+      }
+      
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: #f8f8f8;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: left;
+      }
+      
+      .faq-answer-content {
+        padding: 15px;
+        border-top: 1px solid #eee;
+      }
+      
+      /* アコーディオンが開いているときのスタイル */
+      .faq-item.active .faq-answer {
+        max-height: 300px; /* 十分な高さ */
+      }
+      
+      .faq-item.active .faq-toggle {
+        transform: rotate(180deg);
+      }
 
 
 
 
 /* AI無料体験の流れ セクションのスタイル */
-.free-trial-flow {
-    padding: 0 15px;
-    background-color: #e8f5e9;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+    /* ftf = Free Trial Flow のプレフィックス */
+    .ftf-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 30px 10px;
+      }
+      
+      .ftf-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      
+      .ftf-step{
+        display: inline-block;
+      }
 
-.free-trial-flow .section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.step-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.step-box {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    box-sizing: border-box;
-}
-
-.step-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.step-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 15px;
-    /* アイコンは画像で挿入するのでここではプレースホルダーのみ */
-}
-
-.step-number {
-    color: #ff9800;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.step-title {
-    font-weight: bold;
-    color: #000;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.step-content {
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.arrow-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-}
-
-.arrow {
-    color: #000;
-    font-size: 20px;
-    text-align: center;
-}
+      .ftf-step-container {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      
+      .ftf-step-box {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 10px;
+      }
+      
+      .ftf-step-number {
+        color: #ff9800; /* オレンジ色 */
+        font-weight: bold;
+        font-size: 16px;
+        margin: 10px 0px;
+      }
+      
+      .ftf-step-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+      }
+      
+      .ftf-step-description {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+      }
+      
+      .ftf-arrow-container {
+        display: flex;
+        justify-content: center;
+        height: 40px;
+    }
+    
+    .ftf-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* アイコンのスタイル */
+    .ftf-icon {
+        float: left;
+        margin-right: 30px;
+        width: 60px;
+        height: 60px;
+        align-items: center;
+      }
+      
+      .ftf-calendar-icon {
+        color: #ff9800;
+      }
+      
+      .ftf-dumbbell-icon {
+        color: #ff9800;
+      }
+      
+      .ftf-document-icon {
+        color: #ff9800;
+      }
+      
+      /* clearfix */
+      .ftf-clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }

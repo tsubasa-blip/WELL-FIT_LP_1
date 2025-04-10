@@ -234,70 +234,328 @@
     </ol>
 </section>
 
+
+<div class="page-container">
+    <!-- StoreLocationAccordion コンポーネント開始 -->
+    <div id="storeLocationAccordion" class="sla-container">
+      <h2 class="sla-title">店舗情報・アクセス</h2>
+      
+      <!-- 千葉県 - 初期状態では閉じている -->
+      <div class="sla-accordion-container">
+        <div class="sla-accordion-header" data-direction="down">
+          <span>千葉県</span>
+          <span class="sla-toggle-btn sla-plus">＋</span>
+        </div>
+        <div class="sla-accordion-content">
+          <div class="sla-store-item">>> 八千代店</div>
+          <div class="sla-store-item">>> 八千代店</div>
+          <div class="sla-store-item">>> 八千代店</div>
+          <div class="sla-store-item">>> 八千代店</div>
+          <div class="sla-store-item">>> 八千代店</div>
+          <div class="sla-store-item">>> 八千代店</div>
+          <div class="sla-store-item">>> 八千代店</div>
+        </div>
+      </div>
+      
+      <!-- 埼玉県 - 閉じている状態 -->
+      <div class="sla-accordion-container">
+        <div class="sla-accordion-header" data-direction="up">
+          <span>埼玉県</span>
+          <span class="sla-toggle-btn sla-plus">＋</span>
+        </div>
+        <div class="sla-accordion-content">
+          <div class="sla-store-item">>> 大宮店</div>
+          <div class="sla-store-item">>> 浦和店</div>
+          <div class="sla-store-item">>> 川口店</div>
+        </div>
+      </div>
+      
+      <!-- 神奈川県 - 閉じている状態 -->
+      <div class="sla-accordion-container">
+        <div class="sla-accordion-header" data-direction="up">
+          <span>神奈川県</span>
+          <span class="sla-toggle-btn sla-plus">＋</span>
+        </div>
+        <div class="sla-accordion-content">
+          <div class="sla-store-item">>> 横浜店</div>
+          <div class="sla-store-item">>> 川崎店</div>
+          <div class="sla-store-item">>> 藤沢店</div>
+        </div>
+      </div>
+    </div>
+    <!-- StoreLocationAccordion コンポーネント終了 -->
+
+    <!-- ここに他のコンポーネントを追加できます -->
+    
+  </div>
+
+  <script>
+    // StoreLocationAccordion 機能
+    document.addEventListener('DOMContentLoaded', () => {
+      initStoreLocationAccordion();
+    });
+    
+    function initStoreLocationAccordion() {
+      const accordionHeaders = document.querySelectorAll('.sla-accordion-header');
+      
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const direction = header.getAttribute('data-direction');
+          const toggleBtn = header.querySelector('.sla-toggle-btn');
+          
+          // アクティブ状態の切り替え
+          if (header.classList.contains('active')) {
+            // 閉じる
+            header.classList.remove('active');
+            content.style.maxHeight = null;
+            
+            if (direction === 'down') {
+              content.classList.remove('sla-slide-down');
+              content.classList.add('sla-slide-up');
+              toggleBtn.textContent = '＋';
+              toggleBtn.classList.remove('sla-minus');
+              toggleBtn.classList.add('sla-plus');
+            } else {
+              content.classList.remove('sla-slide-down');
+              content.classList.add('sla-slide-up');
+              toggleBtn.textContent = '＋';
+              toggleBtn.classList.remove('sla-minus');
+              toggleBtn.classList.add('sla-plus');
+            }
+          } else {
+            // 開く
+            header.classList.add('active');
+            
+            if (direction === 'down') {
+              content.classList.remove('sla-slide-up');
+              content.classList.add('sla-slide-down');
+              content.style.maxHeight = '500px';
+              toggleBtn.textContent = 'ー';
+              toggleBtn.classList.remove('sla-plus');
+              toggleBtn.classList.add('sla-minus');
+            } else {
+              content.classList.remove('sla-slide-up');
+              content.classList.add('sla-slide-down');
+              content.style.maxHeight = '500px';
+              toggleBtn.textContent = 'ー';
+              toggleBtn.classList.remove('sla-plus');
+              toggleBtn.classList.add('sla-minus');
+            }
+          }
+        });
+      });
+    }
+    
+    // ここに他のコンポーネント用のJavaScriptを追加できます
+  </script>
+
+
+
+<!-- QA -->
+<div class="faq">
+<div class="faq-container">
+    <h2 class="faq-title">よくあるご質問</h2>
+    
+    <!-- FAQ項目 1 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        運動初心者でも大丈夫ですか？
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          はい、初心者の方でも安心してご利用いただけます。トレーナーが一人ひとりのレベルに合わせたプログラムをご提案します。
+        </div>
+      </div>
+    </div>
+    
+    <!-- FAQ項目 2 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        男性でも利用することができますか？
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          本施設は全ての方にご利用いただけます。
+        </div>
+      </div>
+    </div>
+    
+    <!-- FAQ項目 3 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        なぜこんなに安いの？
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          ダイエットやボディメイクには無駄のない効果的な運動習慣を形成することによって、パーソナルジムやWEBフィットネス教材費や時間のコストパフォーマンスを実現しています。
+        </div>
+      </div>
+    </div>
+    
+    <!-- FAQ項目 4 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        子供連れは可能ですか？
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          安全上の理由から、トレーニングエリアへのお子様の入場はご遠慮いただいております。ご理解とご協力をお願いいたします。
+        </div>
+      </div>
+    </div>
+    
+    <!-- FAQ項目 5 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        駐車場はありますか？
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          はい、施設に隣接した専用駐車場をご用意しております。会員の方は無料でご利用いただけます。
+        </div>
+      </div>
+    </div>
+    
+    <!-- FAQ項目 6 -->
+    <div class="faq-item">
+      <div class="faq-question">
+        強くなれますか？
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          はい、適切なトレーニングプログラムと栄養指導により、筋力向上や体力増強を目指すことができます。目標に合わせたプランをご提案いたします。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // クリックした項目の開閉を切り替え
+          item.classList.toggle('active');
+          
+          // トグルボタンのテキストを変更
+          const toggle = item.querySelector('.faq-toggle');
+          if (item.classList.contains('active')) {
+            toggle.textContent = '−';
+          } else {
+            toggle.textContent = '+';
+          }
+        });
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- AI -->
 <!-- 無料体験の流れ セクション -->
-<section class="free-trial-flow">
-    <h2 class="section-title">無料体験の流れ</h2>
+<div class="ftf-container">
+    <h2 class="ftf-title">無料体験の流れ</h2>
     
-    <div class="step-container">
-        <!-- ステップ1 -->
-        <div class="step-box">
-            <div class="step-number">STEP.1</div>
-            <div class="step-header">
-                <div class="step-icon">
-                    <!-- カレンダーアイコンはここに画像を挿入 -->
-                    <!-- 例: <img src="calendar-icon.png" alt="カレンダー"> -->
-                     <img src="assets/images/IMG_guruguru.png.webp" alt="" width="40px" >
-                </div>
-                <div class="step-title">ご希望の日程・店舗のご予約</div>
-            </div>
-            <div class="step-content">
-                お申し込みフォームにご入力いただくか、公式LINEから簡単にご予約可能となります。<br>
-                無料カウンセリングもしくは体験トレーニングからお選びください。
-            </div>
+    <!-- ステップ1 -->
+    <div class="ftf-step-container">
+      <div class="ftf-step-box ftf-clearfix">
+        <!-- カレンダーアイコン -->
+        <div class="ftf-icon ftf-calendar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm2 4h5v5H7v-5z"/>
+          </svg>
         </div>
-        
-        <!-- 矢印 -->
-        <div class="arrow-container">
-            <div class="arrow">&#x3E;&#x3E;</div>
+        <div>
+            <div></div>
+        <div class="ftf-step">
+            <p class="ftf-step-number">STEP_1</p>
+          <h3 class="ftf-step-title">ご希望の日程・店舗のご予約</h3>
         </div>
-        
-        <!-- ステップ2 -->
-        <div class="step-box">
-            <div class="step-number">STEP.2</div>
-            <div class="step-header">
-                <div class="step-icon">
-                    <!-- ダンベルアイコンはここに画像を挿入 -->
-                    <!-- 例: <img src="dumbbell-icon.png" alt="ダンベル"> -->
-                </div>
-                <div class="step-title">体験・カウンセリング</div>
-            </div>
-            <div class="step-content">
-                カウンセリングの内容をもとに体験トレーニングを実施。<br>
-                パーソナルジムWELL-FIT独自のオーダーメイドトレーニングを体験していただきます。<br>
-                専属が苦手な方でもしっかりとサポートしますのでご安心ください。
-            </div>
+          <p class="ftf-step-description">
+            お申し込みフォームにご入力いただくか、公式LINEから簡単にご予約可能となります。<br>
+            無料カウンセリングもしくは体験トレーニングからお選びください。
+          </p>
         </div>
-        
-        <!-- 矢印 -->
-        <div class="arrow-container">
-            <div class="arrow">&#x3E;&#x3E;</div>
-        </div>
-        
-        <!-- ステップ3 -->
-        <div class="step-box">
-            <div class="step-number">STEP.3</div>
-            <div class="step-header">
-                <div class="step-icon">
-                    <!-- メモアイコンはここに画像を挿入 -->
-                    <!-- 例: <img src="memo-icon.png" alt="メモ"> -->
-                </div>
-                <div class="step-title">振り返り・プランのご提案</div>
-            </div>
-            <div class="step-content">
-                パーソナルトレーニングの原点を原理にヒアリングし、日々の生活習慣やアドバイスなどをお伝えします。<br>
-                その後お客様の目的に合わせたプランのご紹介、最適な運動頻度やこれからの生活支援を提案させていただきます。
-            </div>
-        </div>
+      </div>
+      <!-- 下矢印 -->
+      <div class="ftf-arrow-container">
+        <svg class="ftf-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          <path d="M7.41 15.59L12 20.17l4.59-4.58L18 17l-6 6-6-6 1.41-1.41z"/>
+        </svg>
+      </div>
     </div>
-</section>
+    
+    <!-- ステップ2 -->
+    <div class="ftf-step-container">
+      <div class="ftf-step-box ftf-clearfix">
+        <!-- ダンベルアイコン -->
+        <div class="ftf-icon ftf-dumbbell-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="ftf-step-number">STEP_2</p>
+          <h3 class="ftf-step-title">体験・カウンセリング</h3>
+          <p class="ftf-step-description">
+            カウンセリングの内容をもとに体験トレーニングを実施。<br>
+            パーソナルジムWELL-FIT独自のオーダーメイドトレーニングを体験していただきます。<br>
+            担当が丁寧なでもしっかりとサポートしますのでご安心ください。
+          </p>
+        </div>
+      </div>
+      <!-- 下矢印 -->
+      <div class="ftf-arrow-container">
+        <svg class="ftf-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          <path d="M7.41 15.59L12 20.17l4.59-4.58L18 17l-6 6-6-6 1.41-1.41z"/>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- ステップ3 -->
+    <div class="ftf-step-container">
+      <div class="ftf-step-box ftf-clearfix">
+        <!-- ドキュメントアイコン -->
+        <div class="ftf-icon ftf-document-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-4 4.5l1.5 1.5L9 15.5V16h.5l2.5-2.5L13.5 15 9 19.5V14.5zM7 17h10v2H7v-2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="ftf-step-number">STEP_3</p>
+          <h3 class="ftf-step-title">振り返り・プランのご提案</h3>
+          <p class="ftf-step-description">
+            パーソナルトレーニングの原始を徹底にヒアリングし、日々の生活やトレーニングアドバイスなどをお伝えします。<br>
+            その後お客様の目的に合わせたプランのご紹介、適正な運動頻度やこれからの生活までご提案させていただきます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
