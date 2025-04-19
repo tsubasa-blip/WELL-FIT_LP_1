@@ -21,15 +21,48 @@
     </div>
     <div class="small">
         <img src="assets/images/small.png" width="100%" alt="">
+        <div class="arrow-flow">
+            <div class="arrow-step">通いやすい</div>
+            <div class="arrow-step">変わる実感</div>
+            <div class="arrow-step last">理想のカラダ</div>
+        </div>
     </div>
 
-    <div class="btn-area">
+    <!-- <div class="btn-area">
         <div class="box">
             <h1>無料体験受付中！!</h1>
             <p class="convertion-link1">無料体験予約</p>
             <p class="convertion-link2">LINEでカンタン予約</p>
         </div>
+    </div> -->
+
+
+    <!-- 無料体験予約セクション -->
+    <div class="ftc-wrapper">
+        <!-- 上部のグレーエリア -->
+        <!-- <div class="ftc-image-area"></div> -->
+
+        <div class="ftc-container">
+            <div class="ftc-content-box">
+                <p class="ftc-highlight-text">30秒でカンタン！</p>
+                <h2 class="ftc-main-title">無料体験受付中!!</h2>
+
+                <!-- 予約ボタンエリア -->
+                <div class="ftc-buttons-area">
+                    <!-- 赤色ボタン -->
+                    <a href="https://example.com/free-trial" class="ftc-trial-button ftc-red-button">
+                        無料体験予約
+                    </a>
+
+                    <!-- 緑色ボタン -->
+                    <a href="https://example.com/line-reservation" class="ftc-trial-button ftc-green-button">
+                        LINEで簡単予約
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <div class="about">
         <h2>パーソナルジム</h2>
@@ -173,10 +206,10 @@
                     </dt>
                     <hr width="140px" color="#ccd97d">
                     <dd class="section-description">
-                        パーソナルジムWELL-FITでは、<span class="marker">入会者のほとんどが運動初心者</span>です。<br>
-                        あなた専用のトレーニングプログラムで運動が苦手な方でも安全に<br>
-                        楽しくトレーニングができます。デスクワークや普段から体を動かす方<br>
-                        まで幅広い内容のトレーニングをご提供いたします。
+                        パーソナルジムWELL-FITでは、<span class="marker">入会者のほとんどが運動初心者</span><br>
+                        です。あなた専用のトレーニングプログラムで運動が苦手な方でも<br>
+                        安全に楽しくトレーニングができます。デスクワークや普段から体<br>
+                        を動かす方まで幅広い内容のトレーニングをご提供いたします。
                     <dd class="image-center">
                         <img class="image-big-center" src="assets/images/point4.webp" alt="">
                     </dd>
@@ -194,9 +227,9 @@
                         運動生理学・機能解剖学・栄養学・食事に関する知識や技術は<br>
                         もちろんのこと、楽しさの品質を重視したプロのトレーナーが<br>
                         揃っています！<br>
-                        <span class="marker">採用率3.4%の厳選されたトレーナー</span>がお客様の理想を叶えるため、<br>
-                        無理のない正しいトレーニングを提案するので、モチベーションを<br>
-                        保ちながら楽しくトレーニングを続けることができます。
+                        <span class="marker">採用率3.4%の厳選されたトレーナー</span>がお客様の理想を叶える<br>
+                        ため、無理のない正しいトレーニングを提案するので、<br>
+                        モチベーションを保ちながら楽しく続けることができます。
                     </dd>
                     <dd class="image-left">
                         <img class="image-big-left" src="assets/images/point5.webp" alt="" width="305px" height="225px">
@@ -355,6 +388,7 @@
                         if (header.classList.contains('active')) {
                             // 閉じる
                             header.classList.remove('active');
+                            header.parentElement.classList.remove('active'); // 親要素からもactiveを削除
                             content.style.maxHeight = null;
 
                             if (direction === 'down') {
@@ -373,7 +407,7 @@
                         } else {
                             // 開く
                             header.classList.add('active');
-
+                            header.parentElement.classList.add('active'); // 親要素にもactiveを追加
                             if (direction === 'down') {
                                 content.classList.remove('sla-slide-up');
                                 content.classList.add('sla-slide-down');
@@ -533,9 +567,17 @@
                     <!-- カレンダーアイコン -->
                     <div class="ftf-step-box-upper">
                         <div class="ftf-icon ftf-calendar-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm2 4h5v5H7v-5z" />
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7 1C6.44772 1 6 1.44772 6 2V3H5C3.34315 3 2 4.34315 2 6V20C2 21.6569 3.34315 23 5 23H13.101C12.5151 22.4259 12.0297 21.7496 11.6736 21H5C4.44772 21 4 20.5523 4 20V11H20V11.2899C20.7224 11.5049 21.396 11.8334 22 12.2547V6C22 4.34315 20.6569 3 19 3H18V2C18 1.44772 17.5523 1 17 1C16.4477 1 16 1.44772 16 2V3H8V2C8 1.44772 7.55228 1 7 1ZM16 6V5H8V6C8 6.55228 7.55228 7 7 7C6.44772 7 6 6.55228 6 6V5H5C4.44772 5 4 5.44772 4 6V9H20V6C20 5.44772 19.5523 5 19 5H18V6C18 6.55228 17.5523 7 17 7C16.4477 7 16 6.55228 16 6Z"
+                                    fill="#ff9800" />
+                                <path xmlns="http://www.w3.org/2000/svg"
+                                    d="M15.2929 17.7071C15.6834 17.3166 16.3166 17.3166 16.7071 17.7071L17.3483 18.3482L19.2473 16.4491C19.6379 16.0586 20.271 16.0586 20.6616 16.4491C21.0521 16.8397 21.0521 17.4728 20.6616 17.8634L18.1213 20.4036C18.0349 20.49 17.9367 20.5573 17.8318 20.6054C17.4488 20.8294 16.9488 20.7772 16.6203 20.4487L15.2929 19.1213C14.9024 18.7308 14.9024 18.0976 15.2929 17.7071Z"
+                                    fill="#ff9800" />
+                                <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M24 18C24 21.3137 21.3137 24 18 24C14.6863 24 12 21.3137 12 18C12 14.6863 14.6863 12 18 12C21.3137 12 24 14.6863 24 18ZM13.9819 18C13.9819 20.2191 15.7809 22.0181 18 22.0181C20.2191 22.0181 22.0181 20.2191 22.0181 18C22.0181 15.7809 20.2191 13.9819 18 13.9819C15.7809 13.9819 13.9819 15.7809 13.9819 18Z"
+                                    fill="#ff9800" />
                             </svg>
                         </div>
                         <div class="ftf-step">
@@ -550,10 +592,7 @@
                 </div>
                 <!-- 下矢印 -->
                 <div class="ftf-arrow-container">
-                    <svg class="ftf-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-                        <path d="M7.41 15.59L12 20.17l4.59-4.58L18 17l-6 6-6-6 1.41-1.41z" />
-                    </svg>
+                    <img src="assets/images/arrow.png" class="ftf-arrow" alt="下矢印">
                 </div>
             </div>
 
@@ -568,7 +607,7 @@
                             </svg>
                         </div>
                         <div class="ftf-step">
-                            <p class="ftf-step-number">STEP_2</p>
+                            <p class="ftf-step-number"><span class="marker">STEP_2</span></p>
                             <h3 class="ftf-step-title">体験・カウンセリング</h3>
                         </div>
                     </div>
@@ -580,10 +619,7 @@
                 </div>
                 <!-- 下矢印 -->
                 <div class="ftf-arrow-container">
-                    <svg class="ftf-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-                        <path d="M7.41 15.59L12 20.17l4.59-4.58L18 17l-6 6-6-6 1.41-1.41z" />
-                    </svg>
+                    <img src="assets/images/arrow.png" class="ftf-arrow" alt="下矢印">
                 </div>
             </div>
 
@@ -592,13 +628,38 @@
                 <div class="ftf-step-box ftf-clearfix">
                     <div class="ftf-step-box-upper">
                         <div class="ftf-icon ftf-document-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-4 4.5l1.5 1.5L9 15.5V16h.5l2.5-2.5L13.5 15 9 19.5V14.5zM7 17h10v2H7v-2z" />
+                            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
+                                fill="#ff9800">
+                                <g>
+                                    <path
+                                        d="M504.16,183.326l-17.24-17.233c-10.453-10.461-27.415-10.452-37.868,0l-16.127,16.136l55.1,55.099 l16.135-16.126C514.613,210.741,514.613,193.787,504.16,183.326z">
+                                    </path>
+                                    <path
+                                        d="M18.474,178.378H64.86c10.199,0,18.474-8.274,18.474-18.49c0-10.208-8.275-18.482-18.474-18.482H18.474 C8.274,141.406,0,149.68,0,159.888C0,170.104,8.274,178.378,18.474,178.378z">
+                                    </path>
+                                    <rect x="22.83" y="197.722" width="34.583" height="116.557"></rect>
+                                    <path
+                                        d="M83.334,352.113c0-10.208-8.275-18.491-18.474-18.491H18.474C8.274,333.622,0,341.905,0,352.113 c0,10.207,8.274,18.482,18.474,18.482H64.86C75.059,370.595,83.334,362.32,83.334,352.113z">
+                                    </path>
+                                    <rect x="139.594" y="150.44" width="155.624" height="25.937"></rect>
+                                    <rect x="139.594" y="245.543" width="155.624" height="25.938"></rect>
+                                    <rect x="139.594" y="340.647" width="95.104" height="25.937"></rect>
+                                    <path
+                                        d="M57.413,71.556c0.008-3.977,3.242-7.211,7.215-7.219h263.645c8.82,0.008,16.638,3.52,22.434,9.287 c5.767,5.8,9.283,13.619,9.292,22.434v132.194l34.583-34.583V96.058c-0.013-36.627-29.682-66.296-66.309-66.304H64.628 c-23.096,0.017-41.785,18.71-41.798,41.802v50.507h34.583V71.556z">
+                                    </path>
+                                    <path
+                                        d="M359.998,415.943c-0.009,8.814-3.525,16.633-9.292,22.424c-5.796,5.775-13.614,9.288-22.434,9.296H64.628 c-3.973-0.008-7.206-3.242-7.215-7.218v-50.507H22.83v50.507c0.013,23.092,18.702,41.785,41.798,41.801h263.645 c36.627-0.008,66.296-29.677,66.309-66.303v-58.274l-34.583,34.583V415.943z">
+                                    </path>
+                                    <polygon
+                                        points="281.81,333.344 281.81,388.443 336.911,388.443 472.997,252.357 417.897,197.257 ">
+                                    </polygon>
+                                </g>
                             </svg>
+
                         </div>
                         <div class="ftf-step">
-                            <p class="ftf-step-number">STEP_3</p>
+                            <p class="ftf-step-number"><span class="marker">STEP_3</span></p>
                             <h3 class="ftf-step-title">振り返り・プランのご提案</h3>
                         </div>
                     </div>
@@ -610,41 +671,42 @@
             </div>
         </div>
 
-        <!-- 受付中 -->
-        <div class="btn-area">
-            <div class="box">
-                <h1>無料体験受付中！!</h1>
-                <!-- 赤色ボタン -->
-                <a href="" class="convertion-link1">
-                    無料体験予約
-                </a>
-                <!-- 緑色ボタン -->
-                <a href="" class="convertion-link2">
-                    LINEでカンタン予約
-                </a>
+
+        <!-- 無料体験予約セクション -->
+        <div class="ftc-wrapper">
+            <!-- 上部のグレーエリア -->
+            <!-- <div class="ftc-image-area"></div> -->
+
+            <div class="ftc-container">
+                <div class="ftc-content-box">
+                    <p class="ftc-highlight-text">30秒でカンタン！</p>
+                    <h2 class="ftc-main-title">無料体験受付中!!</h2>
+
+                    <!-- 予約ボタンエリア -->
+                    <div class="ftc-buttons-area">
+                        <!-- 赤色ボタン -->
+                        <a href="https://form.run/@well-fit--1652763997?_gl=1*5i6ia8*_gcl_au*MTE5NDE2OTIuMTc0NDY3NjY2MQ..*_ga*NjQ5NDM0MTEwLjE3MzY3NjU3MjE.*_ga_G36MWXWD5D*MTc0NTA2MjY2NS4xNS4xLjE3NDUwNjI2NjYuNTkuMC4xNDg5NjY4Nzk0"
+                            class="ftc-trial-button ftc-red-button">
+                            無料体験予約
+                        </a>
+
+                        <!-- 緑色ボタン -->
+                        <a href="https://lin.ee/cJxXQAz" class="ftc-trial-button ftc-green-button">
+                            LINEで簡単予約
+                        </a>
+                    </div>
+
+                </div>
             </div>
+
         </div>
     </div>
 
+</body>
 
-    <!-- 無料体験予約セクション -->
-    <div class="ftc-container">
-        <div class="ftc-content-box">
-            <p class="ftc-highlight-text">30秒でカンタン！</p>
-            <h2 class="ftc-main-title">無料体験受付中!!</h2>
 
-            <!-- 予約ボタンエリア -->
-            <div class="ftc-buttons-area">
-                <!-- 赤色ボタン -->
-                <a href="https://example.com/free-trial" class="ftc-trial-button ftc-red-button">
-                    無料体験予約
-                </a>
+<footer class="footer">
+    <p class="footer-copy">copyright by WELL-FIT</p>
+  </footer>
+  
 
-                <!-- 緑色ボタン -->
-                <a href="https://example.com/line-reservation" class="ftc-trial-button ftc-green-button">
-                    LINEで簡単予約
-                </a>
-            </div>
-        </div>
-    </div>
-    </div>

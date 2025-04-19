@@ -383,13 +383,13 @@ ol {
 
 /* 店舗情報 */
 .page-container {
-  margin: 40px auto 60px;
+  margin: 40px auto 0px;
 }
 
 /* StoreLocationAccordion 専用スタイル */
 .sla-container {
   width: 90%;
-  margin: 0 auto 30px;
+  margin: 0 auto 50px;
 }
 
 .sla-title {
@@ -435,6 +435,10 @@ ol {
   color: #8bc8a5;
 }
 
+.sla-accordion-container.active {
+  box-shadow: none;
+}
+
 .sla-accordion-content {
   border-top: 1px solid #ddd;
   /* background-color: #eee; */
@@ -451,8 +455,10 @@ ol {
 }
 
 .sla-store-item a {
-  text-decoration: none; /* リンクの下線を削除 */
-  margin-left: 10px; /* >>と支店名の間にスペースを開ける */
+  text-decoration: none;
+  /* リンクの下線を削除 */
+  margin-left: 10px;
+  /* >>と支店名の間にスペースを開ける */
   color: #333;
 }
 
@@ -463,9 +469,11 @@ ol {
 .arrow-mark {
   color: #cbd877;
   font-weight: bold;
-  line-height: 0.7; /* 文字の行間を詰める */
+  line-height: 0.7;
+  /* 文字の行間を詰める */
   display: inline-block;
-  transform: scaleY(1.8); /* 縦方向に伸ばす */
+  transform: scaleY(1.8);
+  /* 縦方向に伸ばす */
 }
 
 /* ホバー時：下線が出て少し薄くなる */
@@ -581,7 +589,7 @@ ol {
   overflow: hidden;
   transition: max-height 0.3s ease;
   background-color: #f8f8f8;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   text-align: left;
 }
@@ -610,13 +618,15 @@ ol {
   max-width: 500px;
   margin: 0 auto;
   padding: 30px 10px;
+  background-color: #f2fbf7;
 }
 
 .ftf-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 30px;
+  letter-spacing: 2px;
 }
 
 .ftf-step {
@@ -632,6 +642,9 @@ ol {
   display: flex;
   align-items: center;
   margin-bottom: 21px;
+  align-items: flex-start;
+  /* center から flex-start に変更 */
+
 
 }
 
@@ -645,15 +658,16 @@ ol {
 
 .ftf-step-number {
   /* color: #ff9800; オレンジ色 */
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 16px;
-  margin: 10px 0px;
+  margin: 0px 0px 5px 0px;
 }
 
 .ftf-step-title {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
+
 }
 
 .ftf-step-description {
@@ -669,18 +683,21 @@ ol {
 }
 
 .ftf-arrow {
-  width: 40px;
+  width: 50px;
   height: 40px;
 }
 
 /* アイコンのスタイル */
 .ftf-icon {
   display: flex;
-  margin-right: 30px;
+  margin: 0px 30px 0px 0px;
   width: 60px;
   height: 60px;
   align-items: center;
   justify-content: center;
+  align-self: center;
+  /* この行を追加 */
+
 }
 
 .ftf-calendar-icon {
@@ -722,7 +739,7 @@ ol {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(184,230,199,0.5) 70%);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(184, 230, 199, 0.5) 70%);
   pointer-events: none;
 }
 
@@ -791,4 +808,108 @@ ol {
   letter-spacing: 2px;
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
   /* 緑色 */
+}
+
+
+.ftc-image-area {
+  background-color: #d8d8d8;
+  /* グレーの背景色 */
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  /* 任意：角を丸くする場合 */
+}
+
+/* コンテンツボックスの余白を調整 */
+.ftc-content-box {
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 1px;
+}
+
+/* ラッパーの余白を広げる */
+.ftc-wrapper {
+  padding: 20px;
+  background-color: #b8e6c7;
+  /* 緑色の背景 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.small {
+  position: relative;
+  /* 親要素を相対位置に設定 */
+  font-family: "Playfair Display", serif;
+}
+
+.arrow-flow {
+  position: absolute;
+  /* 画像の上に配置 */
+  top: 50%;
+  /* 画像の中央に配置 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 完全に中央に配置 */
+  display: flex;
+  justify-content: space-between;
+  /* 横並びで等間隔に配置 */
+  width: 80%;
+  /* 幅を調整（必要に応じて変更） */
+}
+
+.arrow-step {
+  font-size: 22px;
+  color: white;
+  /* 必要に応じて色を調整 */
+  text-align: center;
+  /* テキストを中央揃え */
+  /* 各要素に個別の位置調整を追加 */
+}
+
+/* 1番目のテキスト（通いやすい）の位置調整 */
+.arrow-step:nth-child(1) {
+  margin-left: -8%;
+  /* 左に少し調整 */
+}
+
+/* 2番目のテキスト（変わる実感）の位置調整 */
+.arrow-step:nth-child(2) {
+  margin-left: -8%;
+  /* 左に少し調整 */
+}
+
+/* 3番目のテキスト（理想のカラダ）の位置調整 */
+.arrow-step.last {
+  font-weight: bold;
+  color: #c3dc3a;
+  /* 色の変更 */
+  margin-left: -6%;
+  /* 左に少し調整 */
+  margin-right: -4%;
+  /* 右に少し寄せる */
+}
+
+
+.footer {
+  background-color: #b8e6c7;
+  padding-bottom: 7px;
+  text-align: center;
+  margin: 0;
+}
+
+.footer-copy {
+  color: #aaa;
+  font-size: 14px;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
