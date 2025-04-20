@@ -18,7 +18,6 @@ li {
   list-style: none;
 }
 
-.main {}
 
 /* 無料体験受付 */
 .btn-area {
@@ -275,7 +274,7 @@ ol {
   object-fit: cover;
   /* object-position: 30% 50%; */
   display: inline-block;
-  border: 1px solid #333;
+  border: 0.5px solid #333;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   width: 180px;
   height: 130px;
@@ -297,7 +296,7 @@ ol {
 }
 
 .image-big-center-1 {
-  border: 1px solid #333;
+  border: 0.8px solid #333;
   width: 90%;
   height: 250px;
   border-radius: 5%;
@@ -364,7 +363,7 @@ ol {
   border-radius: 5%;
   object-fit: cover;
   display: inline-block;
-  border: 1px solid #333;
+  border: 0.5px solid #333;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   width: 180px;
   height: 130px;
@@ -672,7 +671,7 @@ ol {
 
 .ftf-step-description {
   font-size: 11px;
-  line-height: 1.6;
+  line-height: 1.8;
   color: #333;
 }
 
@@ -697,6 +696,8 @@ ol {
   justify-content: center;
   align-self: center;
   /* この行を追加 */
+  color: #ff9800;
+
 
 }
 
@@ -741,6 +742,8 @@ ol {
   bottom: 0;
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(184, 230, 199, 0.5) 70%);
   pointer-events: none;
+  z-index: -1;
+  /* ← これが重要！ テキストの背面に置く */
 }
 
 .ftc-container {
@@ -853,49 +856,133 @@ ol {
 
 .arrow-flow {
   position: absolute;
-  /* 画像の上に配置 */
-  top: 50%;
-  /* 画像の中央に配置 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* 完全に中央に配置 */
-  display: flex;
-  justify-content: space-between;
-  /* 横並びで等間隔に配置 */
-  width: 80%;
-  /* 幅を調整（必要に応じて変更） */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .arrow-step {
-  font-size: 22px;
+  position: absolute;
+  /* それぞれ個別に配置する */
+  font-size: 21px;
   color: white;
-  /* 必要に応じて色を調整 */
   text-align: center;
-  /* テキストを中央揃え */
-  /* 各要素に個別の位置調整を追加 */
+  transform: translate(-50%, -50%);
+  /* 中心基準に位置調整 */
 }
 
-/* 1番目のテキスト（通いやすい）の位置調整 */
+/* 1番目：通いやすい */
 .arrow-step:nth-child(1) {
-  margin-left: -8%;
-  /* 左に少し調整 */
+  top: 50%;
+  left: 16%;
 }
 
-/* 2番目のテキスト（変わる実感）の位置調整 */
+/* 2番目：変わる実感 */
 .arrow-step:nth-child(2) {
-  margin-left: -8%;
-  /* 左に少し調整 */
+  top: 50%;
+  left: 45%;
 }
 
-/* 3番目のテキスト（理想のカラダ）の位置調整 */
+/* 3番目：理想のカラダ */
 .arrow-step.last {
+  top: 50%;
+  left: 80%;
   font-weight: bold;
   color: #c3dc3a;
-  /* 色の変更 */
-  margin-left: -6%;
-  /* 左に少し調整 */
-  margin-right: -4%;
-  /* 右に少し寄せる */
+  white-space: nowrap;
+  /* 改行させない */
+
+}
+
+
+
+.price-promotion {
+  border-top: 1px dashed #ddd;
+  padding-top: 20px;
+}
+
+.price-promotion-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0 20px;
+  color: #222;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.price-promotion-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  margin: 0 auto 20px;
+}
+
+.price-promotion-content {
+  text-align: center;
+}
+
+.price-promotion-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.price-promotion-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+}
+
+.price-promotion-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #d8d356;
+  line-height: 1;
+}
+
+.price-promotion-unit {
+  font-size: 16px;
+  color: #555;
+}
+
+.price-feature-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 10px;
+}
+
+.tag {
+  background-color: #cceacb;
+  color: #2c6633;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.price-details {
+  font-size: 18px;
+  color: #666;
+}
+
+.price-note {
+  font-weight: bold;
+  color: #ffb6c1;
+  margin: 0 0 10px;
+}
+
+.price-small {
+  font-size: 12px;
+  color: #999;
 }
 
 
