@@ -16,7 +16,84 @@
 </head>
 
 <body>
-    <div class="main">
+    <header class="lp-header">
+        <div class="lp-header__container">
+          <div class="lp-header__logo">
+            <img src="assets/images/logo_transparent.png" alt="ロゴ">
+          </div>
+          <div class="lp-header__right">
+            <a href="#contact" class="lp-header__cta">無料体験予約</a>
+            <div class="lp-menu-toggle" id="menuToggle">
+              <span class="lp-menu-toggle__line lp-menu-toggle__line--1"></span>
+              <span class="lp-menu-toggle__line lp-menu-toggle__line--2"></span>
+              <span class="lp-menu-toggle__line lp-menu-toggle__line--3"></span>
+            </div>
+          </div>
+        </div>
+      </header>
+    
+      <nav class="lp-nav" id="navMenu">
+        <ul class="lp-nav__list">
+          <li class="lp-nav__item"><a href="#top" class="lp-nav__link">トップ</a></li>
+          <li class="lp-nav__item"><a href="#concept" class="lp-nav__link">コンセプト</a></li>
+          <li class="lp-nav__item"><a href="#promises" class="lp-nav__link">約束</a></li>
+          <li class="lp-nav__item"><a href="#stores" class="lp-nav__link">店舗</a></li>
+          <li class="lp-nav__item"><a href="#faq" class="lp-nav__link">FAQ</a></li>
+          <li class="lp-nav__item"><a href="#flow" class="lp-nav__link">流れ</a></li>
+        </ul>
+      </nav>
+    
+      <div class="lp-overlay" id="overlay"></div>
+    
+    
+      <script>
+        const toggle = document.getElementById("menuToggle");
+        const nav = document.getElementById("navMenu");
+        const overlay = document.getElementById("overlay");
+        const navLinks = document.querySelectorAll(".lp-nav__link");
+      
+        toggle.addEventListener("click", () => {
+          toggle.classList.toggle("lp-menu-toggle--active");
+          nav.classList.toggle("lp-nav--open");
+          overlay.classList.toggle("lp-overlay--visible");
+        });
+      
+        overlay.addEventListener("click", () => {
+          toggle.classList.remove("lp-menu-toggle--active");
+          nav.classList.remove("lp-nav--open");
+          overlay.classList.remove("lp-overlay--visible");
+        });
+      
+        // ✅ ナビ内リンクをクリックしたときもメニューを閉じる
+        navLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            toggle.classList.remove("lp-menu-toggle--active");
+            nav.classList.remove("lp-nav--open");
+            overlay.classList.remove("lp-overlay--visible");
+          });
+        });
+          // ヘッダー高さ分スクロール位置をずらす
+  document.querySelectorAll('.lp-nav__link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      const target = document.querySelector(href);
+      const headerHeight = 96;
+
+      if (target) {
+        e.preventDefault();
+        const position = target.offsetTop - headerHeight;
+        window.scrollTo({
+          top: position,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+      </script>
+      
+
+    
+    <div class="main" id="top">
         <img src="assets/images/main.png" width="100%" alt="">
     </div>
     <div class="small">
@@ -65,7 +142,7 @@
     </div>
 
 
-    <div class="about">
+    <div class="about" id="concept">
         <h2>パーソナルジム</h2>
         <img src="assets/images/logo_transparent.png" alt="" width="151px">
 
@@ -113,7 +190,7 @@
         </div>
     </div>
 
-    <section class="section">
+    <section class="section" id="promises">
         <img class="allow" src="assets/images/arrow.png" alt="" width="100" height="70">
         <h1>
             パーソナルジムWELL-FITなら<br>
@@ -272,7 +349,7 @@
     </section>
 
 
-    <div class="page-container">
+    <div class="page-container" id="stores">
         <!-- StoreLocationAccordion コンポーネント開始 -->
         <div id="storeLocationAccordion" class="sla-container">
             <h2 class="sla-title">店舗情報・アクセス</h2>
@@ -435,7 +512,7 @@
 
 
         <!-- QA -->
-        <div class="faq">
+        <div class="faq" id="faq">
             <div class="faq-container">
                 <h2 class="faq-title">よくあるご質問</h2>
 
@@ -559,7 +636,7 @@
 
         <!-- AI -->
         <!-- 無料体験の流れ セクション -->
-        <div class="ftf-container">
+        <div class="ftf-container" id="flow">
             <h2 class="ftf-title">無料体験の流れ</h2>
 
             <!-- ステップ1 -->

@@ -18,6 +18,176 @@ li {
   list-style: none;
 }
 
+.main {
+  padding-top: 68px;
+}
+
+.lp-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.lp-header__container {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.lp-header__logo {
+  height: 40px;
+}
+
+.lp-header__logo img {
+  height: 100%;
+}
+
+.lp-header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lp-header__cta {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-right: 20px;
+}
+
+.lp-header__cta:hover {
+  background-color: #ff5252;
+}
+
+.lp-menu-toggle {
+  position: relative;
+  width: 30px;
+  height: 21.5px;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lp-menu-toggle__line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.lp-menu-toggle--active .lp-menu-toggle__line--1 {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.lp-menu-toggle--active .lp-menu-toggle__line--2 {
+  opacity: 0;
+}
+
+.lp-menu-toggle--active .lp-menu-toggle__line--3 {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.lp-nav {
+  position: fixed;
+  top: 68px; /* ヘッダーの高さ分下に配置 */
+  /* left: 50%; */
+  right: 50%;
+  transform: translateX(50%); /* 中央配置に修正 */
+
+  width: 80%; /* 幅を100%に */
+  max-width: 450px;
+  height: 0; /* 最初は非表示に */
+  overflow: hidden;
+  background: #7FB3D5; 
+  border-radius: 0 0 4px 4px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
+  transition: height 0.3s ease-in-out;
+  z-index: 9000;
+}
+/* 開いた状態のスタイル */
+.lp-nav--open {
+  height:370px; /* メニューの高さに応じて調整 */
+}
+
+.lp-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.lp-nav__item {
+  padding: 2px 16px;
+}
+
+.lp-nav__link {
+  display: block;
+  width: 100%; 
+  padding: 16px 32px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #D0D7DE; /* 薄いグレー */
+  box-sizing: border-box;
+  background-color: transparent;
+
+}
+
+.lp-nav__link:hover {
+  filter: grayscale(40%);
+}
+
+
+
+
+
+.lp-overlay {
+  position: fixed;
+  top: 68px; /* ヘッダーに被らないようにヘッダーの高さ分だけ下げる */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 8000;
+}
+
+.lp-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lp-main {
+  margin-top: 60px;
+  padding: 20px;
+}
+
 
 /* 無料体験受付 */
 .btn-area {
