@@ -18,81 +18,83 @@
 <body>
     <header class="lp-header">
         <div class="lp-header__container">
-          <div class="lp-header__logo">
-            <img src="assets/images/logo_transparent.png" alt="ロゴ">
-          </div>
-          <div class="lp-header__right">
-            <a href="#contact" class="lp-header__cta">無料体験予約</a>
-            <div class="lp-menu-toggle" id="menuToggle">
-              <span class="lp-menu-toggle__line lp-menu-toggle__line--1"></span>
-              <span class="lp-menu-toggle__line lp-menu-toggle__line--2"></span>
-              <span class="lp-menu-toggle__line lp-menu-toggle__line--3"></span>
+            <a href="https://tsubasa-blip.github.io/WELL-FIT_LP_1/">
+                <div class="lp-header__logo">
+                    <img src="assets/images/logo_transparent.png" alt="ロゴ">
+                </div>
+            </a>
+            <div class="lp-header__right">
+                <a href="#contact" class="lp-header__cta">無料体験予約</a>
+                <div class="lp-menu-toggle" id="menuToggle">
+                    <span class="lp-menu-toggle__line lp-menu-toggle__line--1"></span>
+                    <span class="lp-menu-toggle__line lp-menu-toggle__line--2"></span>
+                    <span class="lp-menu-toggle__line lp-menu-toggle__line--3"></span>
+                </div>
             </div>
-          </div>
         </div>
-      </header>
-    
-      <nav class="lp-nav" id="navMenu">
+    </header>
+
+    <nav class="lp-nav" id="navMenu">
         <ul class="lp-nav__list">
-          <li class="lp-nav__item"><a href="#top" class="lp-nav__link">トップ</a></li>
-          <li class="lp-nav__item"><a href="#concept" class="lp-nav__link">コンセプト</a></li>
-          <li class="lp-nav__item"><a href="#promises" class="lp-nav__link">約束</a></li>
-          <li class="lp-nav__item"><a href="#stores" class="lp-nav__link">店舗</a></li>
-          <li class="lp-nav__item"><a href="#faq" class="lp-nav__link">FAQ</a></li>
-          <li class="lp-nav__item"><a href="#flow" class="lp-nav__link">流れ</a></li>
+            <li class="lp-nav__item"><a href="#top" class="lp-nav__link">トップ</a></li>
+            <li class="lp-nav__item"><a href="#concept" class="lp-nav__link">コンセプト</a></li>
+            <li class="lp-nav__item"><a href="#promises" class="lp-nav__link">約束</a></li>
+            <li class="lp-nav__item"><a href="#stores" class="lp-nav__link">店舗</a></li>
+            <li class="lp-nav__item"><a href="#faq" class="lp-nav__link">FAQ</a></li>
+            <li class="lp-nav__item"><a href="#flow" class="lp-nav__link">流れ</a></li>
         </ul>
-      </nav>
-    
-      <div class="lp-overlay" id="overlay"></div>
-    
-    
-      <script>
+    </nav>
+
+    <div class="lp-overlay" id="overlay"></div>
+
+
+    <script>
         const toggle = document.getElementById("menuToggle");
         const nav = document.getElementById("navMenu");
         const overlay = document.getElementById("overlay");
         const navLinks = document.querySelectorAll(".lp-nav__link");
-      
+
         toggle.addEventListener("click", () => {
-          toggle.classList.toggle("lp-menu-toggle--active");
-          nav.classList.toggle("lp-nav--open");
-          overlay.classList.toggle("lp-overlay--visible");
+            toggle.classList.toggle("lp-menu-toggle--active");
+            nav.classList.toggle("lp-nav--open");
+            overlay.classList.toggle("lp-overlay--visible");
         });
-      
+
         overlay.addEventListener("click", () => {
-          toggle.classList.remove("lp-menu-toggle--active");
-          nav.classList.remove("lp-nav--open");
-          overlay.classList.remove("lp-overlay--visible");
-        });
-      
-        // ✅ ナビ内リンクをクリックしたときもメニューを閉じる
-        navLinks.forEach(link => {
-          link.addEventListener("click", () => {
             toggle.classList.remove("lp-menu-toggle--active");
             nav.classList.remove("lp-nav--open");
             overlay.classList.remove("lp-overlay--visible");
-          });
         });
-          // ヘッダー高さ分スクロール位置をずらす
-  document.querySelectorAll('.lp-nav__link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      const target = document.querySelector(href);
-      const headerHeight = 96;
 
-      if (target) {
-        e.preventDefault();
-        const position = target.offsetTop - headerHeight;
-        window.scrollTo({
-          top: position,
-          behavior: 'smooth'
+        // ✅ ナビ内リンクをクリックしたときもメニューを閉じる
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                toggle.classList.remove("lp-menu-toggle--active");
+                nav.classList.remove("lp-nav--open");
+                overlay.classList.remove("lp-overlay--visible");
+            });
         });
-      }
-    });
-  });
-      </script>
-      
+        // ヘッダー高さ分スクロール位置をずらす
+        document.querySelectorAll('.lp-nav__link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const target = document.querySelector(href);
+                const headerHeight = 96;
 
-    
+                if (target) {
+                    e.preventDefault();
+                    const position = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: position,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
     <div class="main" id="top">
         <img src="assets/images/main.png" width="100%" alt="">
     </div>
@@ -352,7 +354,18 @@
     <div class="page-container" id="stores">
         <!-- StoreLocationAccordion コンポーネント開始 -->
         <div id="storeLocationAccordion" class="sla-container">
-            <h2 class="sla-title">店舗情報・アクセス</h2>
+            <h2 class="sla-title">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="
+                #000000"
+                    style="position: relative; right: 3px; top: -2px;">
+                    <path
+                        d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13ZM12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15Z">
+                    </path>
+                </svg>
+
+
+                店舗情報・アクセス
+            </h2>
 
             <!-- 千葉県 -->
             <div class="sla-accordion-container">
@@ -637,8 +650,9 @@
         <!-- AI -->
         <!-- 無料体験の流れ セクション -->
         <div class="ftf-container" id="flow">
-            <h2 class="ftf-title">無料体験の流れ</h2>
-
+            <h2 class="ftf-title">
+                <i class="fas fa-running" style="color:#ff9800; margin-right:10px;"></i>無料体験の流れ
+            </h2>
             <!-- ステップ1 -->
             <div class="ftf-step-container">
                 <div class="ftf-step-box ftf-clearfix">
@@ -679,7 +693,7 @@
                 <div class="ftf-step-box ftf-clearfix">
                     <div class="ftf-step-box-upper">
                         <div class="ftf-icon ftf-dumbbell-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60" fill="#ff9800">
                                 <path
                                     d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z" />
                             </svg>
@@ -706,7 +720,7 @@
                 <div class="ftf-step-box ftf-clearfix">
                     <div class="ftf-step-box-upper">
                         <div class="ftf-icon ftf-document-icon">
-                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ff9800">
+                            <svg viewBox="0 0 512 512" width="60" height="60" xmlns="http://www.w3.org/2000/svg" fill="#ff9800">
                                 <g>
                                     <path
                                         d="M504.16,183.326l-17.24-17.233c-10.453-10.461-27.415-10.452-37.868,0l-16.127,16.136l55.1,55.099 l16.135-16.126C514.613,210.741,514.613,193.787,504.16,183.326z">
