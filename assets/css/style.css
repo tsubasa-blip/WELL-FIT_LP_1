@@ -109,8 +109,8 @@ li {
 }
 
 .lp-menu-toggle--active .lp-menu-toggle__line--2 {
-  opacity: 0;
-  visibility: hidden; /* 完全に非表示に */
+  display: none; /* 完全に消す */
+
 }
 
 .lp-menu-toggle--active .lp-menu-toggle__line--3 {
@@ -134,7 +134,7 @@ li {
   background: #7FB3D5; 
   border-radius: 0 0 4px 4px;
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
-  transition: height 0.3s ease-in-out;
+  transition: height 0.1s ease-in-out;
   z-index: 9000;
 }
 /* 開いた状態のスタイル */
@@ -185,7 +185,7 @@ li {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s;
+  transition: all 0.1s;
   z-index: 8000;
 }
 
@@ -1100,6 +1100,7 @@ ol {
 }
 
 .price-promotion-box {
+  position: relative; /* ←画像の絶対位置を基準に */
   background-color: #fff;
   border-radius: 12px;
   padding: 20px;
@@ -1120,6 +1121,15 @@ ol {
   margin-bottom: 16px;
 }
 
+.price-promotion-image {
+  position: absolute;
+  top: 42px;
+  left: 2px;
+  width: 142px;
+  height: auto;
+  border-radius: 50%; /* 丸くしたい場合 */
+}
+
 .price-promotion-label {
   font-size: 16px;
   font-weight: 500;
@@ -1127,10 +1137,18 @@ ol {
 }
 
 .price-promotion-value {
-  font-size: 32px;
   font-weight: bold;
-  color: #d8d356;
+  color: #f4748d;
   line-height: 1;
+  font-size: 48px; /* さらに大きく */
+  font-weight: 700; /* 太字強調 */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* 軽い影で浮き上がらせる */
+}
+
+.price-promotion-zero {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;  /* 必要なら微調整 */
 }
 
 .price-promotion-unit {
@@ -1187,3 +1205,8 @@ ol {
   letter-spacing: 0.5px;
   margin: 0;
 }
+
+
+
+
+
