@@ -20,7 +20,7 @@ li {
 }
 
 .main {
-  padding-top: 68px;
+  padding-top: 65px;
 }
 
 .lp-header {
@@ -41,7 +41,7 @@ li {
   max-width: 450px;
   width: 100%;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 13px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,24 +59,28 @@ li {
 .lp-header__right {
   display: flex;
   align-items: center;
-  gap: 4px;
+  /* gap: 2px; */
 }
 
 .lp-header__cta {
-  display: inline-block;
-  padding: 10px 18px;
+  display: inline-flex;  /* ← flexにする */
+  align-items: center;   /* 縦位置を中央に揃える */
+  gap: 3px;              /* アイコンとテキストの間の余白 */
+  padding: 9px 14px;
   background-color: #e74c3c;
   color: white;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s;
   margin-right: 12px;
+  /* line-height: 1; ← 追加 */
+
 }
 
 .lp-header__cta:hover {
-  background-color: #ff5252;
+  opacity: 0.7;
 }
 
 .lp-menu-toggle {
@@ -123,7 +127,7 @@ li {
 
 .lp-nav {
   position: fixed;
-  top: 68px; /* ヘッダーの高さ分下に配置 */
+  top: 65px; /* ヘッダーの高さ分下に配置 */
   /* left: 50%; */
   right: 50%;
   transform: translateX(50%); /* 中央配置に修正 */
