@@ -432,9 +432,9 @@ ol {
 
 .section-description-2 {
   font-size: 9px;
-  margin: 10px 0px 10px 10px;
+  margin: 10px 0px 5px 10px;
   text-align: left;
-  line-height: 1.7;
+  line-height: 2;
 }
 
 .image-left {
@@ -476,7 +476,7 @@ ol {
   margin-top: -60px;
   justify-content: flex-end;
   /* 右寄せ */
-  margin-right: 18px;
+  margin-right: 15px;
 }
 
 .section ol {
@@ -517,6 +517,8 @@ ol {
 
 
 
+
+
 /* 左右対称コンテンツのためのCSS */
 
 /* 反転レイアウト用のメインコンテナ */
@@ -539,7 +541,7 @@ ol {
   align-items: flex-end;
   margin-top: -60px;
   justify-content: flex-start;
-  margin-left: 18px;
+  margin-left: 15px;
 }
 
 /* 小さな画像のコンテナ */
@@ -561,11 +563,20 @@ ol {
 /* 説明文（右側） */
 .mirror-description {
   font-size: 9px;
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 5px 0;
   text-align: left;
-  line-height: 1.7;
+  line-height: 2;
 }
-
+@media screen and (max-width: 395px) {
+  
+  .section-description-2 {
+    font-size: 8px;
+  }
+  .mirror-description {
+    font-size: 8px;
+  
+  }
+}
 
 
 
