@@ -10,11 +10,13 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 450px;
-  min-width: 400px;
+  min-width: 375px;
   width: 100%;
   overflow-x: hidden;
 }
-
+* {
+  outline: 1px solid red;
+}
 li {
   list-style: none;
 }
@@ -271,7 +273,7 @@ li {
 
 .about h3 {
   font-size: 16px;
-  margin: 40px;
+  margin: 40px 0;
   letter-spacing: 1.5px;
   /* 文字間隔を 2px 広げる */
 }
@@ -283,6 +285,7 @@ li {
   /* 文字間隔を 2px 広げる */
 
 }
+
 
 /* 悩みについて */
 .fear {
@@ -314,6 +317,8 @@ li {
   /* 背景を灰色 */
   filter: grayscale(10%) blur(0.0px) opacity(70%);
   z-index: -1;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .fear-image h2 {
