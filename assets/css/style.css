@@ -63,9 +63,12 @@ li {
 }
 
 .lp-header__cta {
-  display: inline-flex;  /* ← flexにする */
-  align-items: center;   /* 縦位置を中央に揃える */
-  gap: 3px;              /* アイコンとテキストの間の余白 */
+  display: inline-flex;
+  /* ← flexにする */
+  align-items: center;
+  /* 縦位置を中央に揃える */
+  gap: 3px;
+  /* アイコンとテキストの間の余白 */
   padding: 10px 10px;
   background-color: #e74c3c;
   color: white;
@@ -110,11 +113,13 @@ li {
   transform: rotate(45deg);
   width: 40px;
   position: relative;
-  top: 11px; /* 線の位置を微調整 */
+  top: 11px;
+  /* 線の位置を微調整 */
 }
 
 .lp-menu-toggle--active .lp-menu-toggle__line--2 {
-  display: none; /* 完全に消す */
+  display: none;
+  /* 完全に消す */
 
 }
 
@@ -122,29 +127,36 @@ li {
   transform: rotate(-45deg);
   width: 40px;
   position: relative;
-  top: -11px; /* 線の位置を微調整 */
+  top: -11px;
+  /* 線の位置を微調整 */
 }
 
 .lp-nav {
   position: fixed;
-  top: 68px; /* ヘッダーの高さ分下に配置 */
+  top: 68px;
+  /* ヘッダーの高さ分下に配置 */
   /* left: 50%; */
   right: 50%;
-  transform: translateX(50%); /* 中央配置に修正 */
+  transform: translateX(50%);
+  /* 中央配置に修正 */
 
-  width: 100%; /* 幅を100%に */
+  width: 100%;
+  /* 幅を100%に */
   max-width: 450px;
-  height: 0; /* 最初は非表示に */
+  height: 0;
+  /* 最初は非表示に */
   overflow: hidden;
-  background: #7FB3D5; 
+  background: #7FB3D5;
   border-radius: 0 0 4px 4px;
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
   transition: height 0.1s ease-in-out;
   z-index: 9000;
 }
+
 /* 開いた状態のスタイル */
 .lp-nav--open {
-  height:370px; /* メニューの高さに応じて調整 */
+  height: 370px;
+  /* メニューの高さに応じて調整 */
 }
 
 .lp-nav__list {
@@ -160,12 +172,13 @@ li {
 
 .lp-nav__link {
   display: block;
-  width: 100%; 
+  width: 100%;
   padding: 16px 32px;
   color: white;
   text-decoration: none;
   font-size: 16px;
-  border-bottom: 1px solid #D0D7DE; /* 薄いグレー */
+  border-bottom: 1px solid #D0D7DE;
+  /* 薄いグレー */
   box-sizing: border-box;
   background-color: transparent;
 
@@ -181,7 +194,8 @@ li {
 
 .lp-overlay {
   position: fixed;
-  top: 68px; /* ヘッダーに被らないようにヘッダーの高さ分だけ下げる */
+  top: 68px;
+  /* ヘッダーに被らないようにヘッダーの高さ分だけ下げる */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -567,15 +581,357 @@ ol {
   text-align: left;
   line-height: 2;
 }
+
 @media screen and (max-width: 395px) {
-  
+
   .section-description-2 {
     font-size: 8px;
   }
+
   .mirror-description {
     font-size: 8px;
-  
+
   }
+}
+
+
+
+/* ===================================
+   お客様の声セクション
+=================================== */
+.customer-voice {
+  background-color: #f8f9fa;
+  padding: 32px 20px 21px;
+}
+
+.voice-section-title {
+  margin: 0;
+  padding: 0;
+}
+
+.voice-heading-small {
+  font-size: 0.60em;
+  font-weight: normal;
+  display: block;
+  margin: 0;
+  /* line-height: 1.3; */
+  color: #ccd97d;
+}
+
+.voice-heading-large {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+  /* line-height: 1.2; */
+}
+
+
+.image-crop {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 28px;
+
+}
+
+.voice-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ←これが「枠に合うように切り取る」 */
+  object-position: center;
+  /* 中央を表示 */
+  display: block;
+}
+
+
+.voice-section-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 28px;
+  color: #333;
+}
+
+.voice-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.voice-item {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px 25px 14px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.voice-header {
+  margin-bottom: 20px;
+}
+
+.voice-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.voice-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 20px;
+}
+
+.voice-result {
+  color: #8BC8A4;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.voice-content p {
+  line-height: 1.8;
+  color: #555;
+  font-size: 12px;
+  text-align: left;
+}
+
+
+
+/* ===================================
+   Before Afterセクション
+=================================== */
+.before-after {
+  background-color: #fff;
+  padding: 21px 20px;
+}
+
+.ba-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.ba-item {
+  margin-bottom: 50px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ba-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.ba-image {
+  position: relative;
+  flex: 1;
+}
+
+.ba-image img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.ba-label {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8BC8A4;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap; /* ★ここが重要 */
+
+}
+
+.ba-arrow {
+  font-size: 20px;
+  font-weight: bold;
+  color: #8BC8A4;
+  flex-shrink: 0;
+}
+
+.ba-info h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.ba-info p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 12px;
+  text-align: left;
+}
+
+
+/* ===================================
+   トレーニングプランセクション
+=================================== */
+.training-plan {
+  background-color: #f8f9fa;
+  padding: 20px 20px;
+}
+
+.plan-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.plan-section-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: #333;
+}
+
+.plan-item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px 25px;
+  margin-bottom: 36px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #8BC8A4;
+}
+
+.course-heading {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.plan-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ←これが「枠に合うように切り取る」 */
+  object-position: center;
+  /* 中央を表示 */
+  display: block;
+  border: 1px solid #ccd97d; /* 色や太さは調整OK */
+
+}
+
+.plan-image-crop {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 21px;
+  border-radius: 5px;
+
+}
+
+.plan-title {
+  font-size: 19px;
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.plan-features ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 14px;
+}
+
+.plan-features li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 4px;
+  line-height: 1.6;
+  text-align: left;
+  font-size: 14px;
+  color: #555;
+}
+
+.plan-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #8BC8A4;
+  font-weight: bold;
+}
+
+.plan-description {
+  font-size: 11px;
+  color: #777;
+  line-height: 1.6;
+  text-align: left;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.custom-arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0 20px;
+}
+
+.custom-arrow-circle {
+  width: 48px;
+  height: 48px;
+  background-color: #98cea0;
+  /* おしゃれな緑系 */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ▼をCSSだけで描く三角形 */
+.custom-arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid white;
+  /* ▼ の色（白） */
+}
+
+
+
+/* ===================================
+ 料金セクション
+=================================== */
+.pricing {
+  background-color: #fff;
+  padding:21px 20px;
+}
+
+.pricing-section-title{
+font-size: 24px;
+}
+
+.pricing-container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 
@@ -960,7 +1316,7 @@ ol {
 .ftc-content-box {
   background-color: white;
   /* border-radius: 10px; */
-  padding:10px 20px;
+  padding: 10px 20px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -1007,7 +1363,7 @@ ol {
 
 .ftc-red-button {
   background-color: #e74c3c;
-    letter-spacing: 2px;
+  letter-spacing: 2px;
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
   /* 赤色 */
 }
@@ -1119,7 +1475,8 @@ ol {
 }
 
 .price-promotion-box {
-  position: relative; /* ←画像の絶対位置を基準に */
+  position: relative;
+  /* ←画像の絶対位置を基準に */
   background-color: #fff;
   border-radius: 12px;
   padding: 20px;
@@ -1158,15 +1515,19 @@ ol {
   font-weight: bold;
   color: #f4748d;
   line-height: 1;
-  font-size: 48px; /* さらに大きく */
-  font-weight: 700; /* 太字強調 */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* 軽い影で浮き上がらせる */
+  font-size: 48px;
+  /* さらに大きく */
+  font-weight: 700;
+  /* 太字強調 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /* 軽い影で浮き上がらせる */
 }
 
 .price-promotion-zero {
   display: inline-flex;
   align-items: baseline;
-  gap: 2px;  /* 必要なら微調整 */
+  gap: 2px;
+  /* 必要なら微調整 */
 }
 
 .price-promotion-unit {
@@ -1223,8 +1584,3 @@ ol {
   letter-spacing: 0.5px;
   margin: 0;
 }
-
-
-
-
-
